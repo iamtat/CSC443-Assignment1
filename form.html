@@ -1,0 +1,50 @@
+<html>
+<head> <title> Form Fill-Out </title>
+
+<style>
+form{background-color:lightgray}
+
+
+</style>
+
+ </head>
+ 
+<body style="background-color:purple">
+
+<h1 style="font-family:verdana">Please, fill out the following Form :)</h1>
+
+<div>
+<form name = "GuestForm" onsubmit="return validateForm()" method="post">
+First name:<br>
+<input type="text" name="firstname" style="margin-left:10px">
+<br>
+Last name:<br>
+<input type="text" name="lastname" style="margin-left:10px">
+<br><br>
+<input type="submit" value="Submit">
+</form>
+</div>
+	<!--Form Validation Script !-->
+	<script>
+	function validateForm() {
+		var first_name = document.forms["GuestForm"]["firstname"].value;
+		var last_name = document.forms["GuestForm"]["lastname"].value;
+		
+		if( first_name == null && last_name == null){
+			alert("Please enter you First Name and your Family Name");}
+		if (first_name == null || first_name == "") {
+			alert("First Name Must be included");
+			return false;}
+		if (last_name == null || last_name == ""){
+			alert("Last Name Must be included");
+			return false;}
+			
+		alert("Welcome, " + first_name + " " + last_name + " :)");
+		
+			
+		}
+	</script>
+						
+	</body>					
+						
+</html>
